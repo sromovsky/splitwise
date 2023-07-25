@@ -1,0 +1,8 @@
+{
+    "menu": [
+        {
+            "labelCode": "menu-item.participants",
+            "routerLink": "participants"
+        }
+    ]
+}
