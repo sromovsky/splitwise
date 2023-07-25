@@ -1,5 +1,5 @@
 {
-    "menu": [
+    "menu-items": [
         {
             "labelCode": "menu-item.participants",
             "routerLink": "participants"
