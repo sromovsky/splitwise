@@ -1,7 +1,7 @@
 {
     "menu-items": [
         {
-            "labelCode": "menu-item.participants",
+            "name": "Participants",
             "routerLink": "participants"
         }
     ]
