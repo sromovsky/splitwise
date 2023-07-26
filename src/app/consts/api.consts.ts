@@ -1,1 +1,1 @@
-export const API_URL = 'https://my-json-server.typicode.com/sromovsky/splitwise';
+export const API_URL = 'api';
