@@ -1,7 +1,3 @@
-<p *ngFor="let alert of alertItems()">
-    <ngb-alert [type]="alert.type">{{alert.message}}</ngb-alert>
-</p>
-
 @for (alert of alertItems(); track alert) {
 <ngb-alert [type]="alert.type">{{alert.message}}</ngb-alert>
 }
