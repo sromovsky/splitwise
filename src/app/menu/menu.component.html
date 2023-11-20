@@ -6,9 +6,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-                <li *ngFor="let menuItem of menuItems()" class="nav-item">
-                    <a class="nav-link" [routerLink]="menuItem.routerLink" routerLinkActive="active">{{menuItem.name}}</a>
+                @for (menuItem of menuItems(); track menuItem) {
+                <li class="nav-item">
+                   <a class="nav-link" [routerLink]="menuItem.routerLink" routerLinkActive="active">{{menuItem.name}}</a>
                 </li>
+                }
             </ul>
         </div>
     </div>
