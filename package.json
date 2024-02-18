@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --hmr --proxy-config proxy.conf.json",
+    "start": "concurrently \"npm:json-server\" \"npm:serve\"",
+    "serve": "ng serve --hmr --proxy-config proxy.conf.json",
     "build": "ng build",
     "lint": "ng lint",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --watch db.json"
+    "json-server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.53.0",
     "jasmine-core": "~4.6.0",
     "json-server": "^0.17.3",
