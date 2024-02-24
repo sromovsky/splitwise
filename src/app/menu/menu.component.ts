@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {MenuService} from './menu.service';
 import {NgForOf} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {MenuItemsStore} from '../stores/menu.store';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-menu',
@@ -9,14 +10,13 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
     imports: [
         NgForOf,
         RouterLink,
-        RouterLinkActive
+        RouterLinkActive,
+        TranslateModule
     ],
     templateUrl: './menu.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent {
 
-    private menuService = inject(MenuService);
-
-    menuItems = this.menuService.menuItems;
+    readonly menuItemsStore = inject(MenuItemsStore);
 }

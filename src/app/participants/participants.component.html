@@ -1,1 +1,5 @@
-<p>participants works!</p>
+@for (participant of participantStore.participants(); track participant) {
+    {{participant | json}}
+} @empty {
+    {{'participants.no-participants' | translate}}
+}

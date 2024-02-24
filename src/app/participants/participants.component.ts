@@ -1,13 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ParticipantStore} from '../stores/participant.store';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-participants',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, TranslateModule],
     templateUrl: './participants.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ParticipantsComponent {
 
+    readonly participantStore = inject(ParticipantStore);
 }

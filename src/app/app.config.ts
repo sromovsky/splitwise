@@ -1,11 +1,28 @@
-import {ApplicationConfig} from '@angular/core';
+import {ApplicationConfig, importProvidersFrom} from '@angular/core';
 import {provideRouter} from '@angular/router';
-import {provideHttpClient} from '@angular/common/http';
+import {HttpClient, provideHttpClient} from '@angular/common/http';
 import {appRoutes} from './app.routing';
+import { provideStore } from '@ngrx/store';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {DEFAULT_LANG} from './consts/i18n.consts';
+
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(appRoutes),
-        provideHttpClient()
+        provideHttpClient(),
+        provideStore(),
+        importProvidersFrom(TranslateModule.forRoot({
+            defaultLanguage: DEFAULT_LANG,
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }))
     ]
 };
