@@ -6,6 +6,7 @@ import { provideStore } from '@ngrx/store';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {DEFAULT_LANG} from './consts/i18n.consts';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -23,6 +24,7 @@ export const appConfig: ApplicationConfig = {
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        }))
+        })),
+        provideAnimationsAsync()
     ]
 };

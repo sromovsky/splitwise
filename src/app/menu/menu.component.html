@@ -1,17 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" [routerLink]="'/'">Splitwise</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-                @for (menuItem of menuItemsStore.menuItems(); track menuItem) {
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="menuItem.routerLink" routerLinkActive="active">{{menuItem.code | translate}}</a>
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
-</nav>
+<mat-toolbar>
+    @for (menuItem of menuItemsStore.menuItems(); track menuItem) {
+        <button mat-button [routerLink]="menuItem.routerLink">{{menuItem.code | translate}}</button>
+    }
+</mat-toolbar>
+
+

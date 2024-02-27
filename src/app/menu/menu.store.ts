@@ -6,12 +6,13 @@ type MenuState = {
 };
 
 const initialState: MenuState = {
-    menuItems: [
-        {
-            code: 'menu-items.participants',
-            routerLink: 'participants'
-        }
-    ]
+    menuItems: [{
+        code: 'menu-items.home',
+        routerLink: ''
+    },{
+        code: 'menu-items.participants',
+        routerLink: 'participants'
+    }]
 };
 
 export const MenuItemsStore = signalStore(
