@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
-import {AlertsService} from './alerts.service';
+import {AlertStore} from './alerts.store';
 
 @Component({
     selector: 'app-alerts',
@@ -12,7 +12,5 @@ import {AlertsService} from './alerts.service';
 })
 export class AlertsComponent {
 
-    private alertsService = inject(AlertsService);
-
-    alertItems = this.alertsService.alertItems;
+    readonly alertsStore = inject(AlertStore);
 }

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ParticipantStore} from '../stores/participant.store';
+import {ParticipantStore} from './participant.store';
 import {TranslateModule} from '@ngx-translate/core';
 
 @Component({

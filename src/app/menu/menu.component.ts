@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {RouterLink, RouterLinkActive} from '@angular/router';
-import {MenuItemsStore} from '../stores/menu.store';
+import {MenuItemsStore} from './menu.store';
 import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
