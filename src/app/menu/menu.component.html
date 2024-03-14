@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
     @for (menuItem of menuItemsStore.menuItems(); track menuItem) {
         <button mat-button [routerLink]="menuItem.routerLink">{{menuItem.code | translate}}</button>
     }
