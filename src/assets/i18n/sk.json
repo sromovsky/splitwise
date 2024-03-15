@@ -4,6 +4,8 @@
         "participants": "Účastníci"
     },
     "participants": {
-        "no-participants": "Žiaden účastník"
+        "no-participants": "Žiaden účastník",
+        "firstName": "Meno",
+        "lastName": "Priezvisko"
     }
 }

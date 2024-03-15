@@ -1,4 +1,4 @@
-import {MenuItem} from './menu-item.model';
+import {MenuItem} from './menu-item.type';
 import {signalStore, withState} from '@ngrx/signals';
 
 type MenuState = {

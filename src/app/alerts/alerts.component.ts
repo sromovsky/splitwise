@@ -11,5 +11,7 @@ import {AlertStore} from './alerts.store';
 })
 export class AlertsComponent {
 
-    readonly alertsStore = inject(AlertStore);
+    private readonly alertsStore = inject(AlertStore);
+
+    alerts = this.alertsStore.alerts;
 }

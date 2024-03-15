@@ -1,4 +1,4 @@
-import {Alert} from './alert.model';
+import {Alert} from './alert.type';
 import {signalStore, withState} from '@ngrx/signals';
 
 type AlertState = {

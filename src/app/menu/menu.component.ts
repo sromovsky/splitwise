@@ -27,5 +27,7 @@ import {MatMenuTrigger} from '@angular/material/menu';
 })
 export class MenuComponent {
 
-    readonly menuItemsStore = inject(MenuItemsStore);
+    private readonly menuItemsStore = inject(MenuItemsStore);
+
+    menuItems = this.menuItemsStore.menuItems;
 }

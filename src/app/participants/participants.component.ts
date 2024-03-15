@@ -1,26 +1,34 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ParticipantStore} from './participant.store';
-import {TranslateModule} from '@ngx-translate/core';
-import {MatButton} from '@angular/material/button';
-import {
-    MatCell, MatCellDef,
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatHeaderRow, MatHeaderRowDef,
-    MatRow, MatRowDef,
-    MatTable
-} from '@angular/material/table';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {TableComponent} from '../table/table.component';
+import {TableColumn} from '../table/table-column.model';
+import {MatIcon} from '@angular/material/icon';
+import {MatFabButton} from '@angular/material/button';
 
 @Component({
     selector: 'app-participants',
     standalone: true,
-    imports: [CommonModule, TranslateModule, MatButton, MatTable, MatColumnDef, MatHeaderCell, MatCell, MatHeaderRow, MatRow, MatHeaderCellDef, MatCellDef, MatHeaderRowDef, MatRowDef],
+    imports: [CommonModule, TranslateModule, TableComponent, MatIcon, MatFabButton],
     templateUrl: './participants.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ParticipantsComponent {
 
-    readonly participantStore = inject(ParticipantStore);
+    private readonly participantStore = inject(ParticipantStore);
+    private readonly translateService = inject(TranslateService);
+
+    participants = this.participantStore.participants;
+
+    readonly columns: TableColumn[] = [
+        {
+            identifier: 'firstName',
+            label: this.translateService.instant('participants.firstName')
+        },
+        {
+            identifier: 'lastName',
+            label: this.translateService.instant('participants.lastName')
+        }
+    ];
 }

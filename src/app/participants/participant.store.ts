@@ -1,4 +1,4 @@
-import {Participant} from './participant.model';
+import {Participant} from './participant.type';
 import {signalStore, withState} from '@ngrx/signals';
 
 type ParticipantState = {
