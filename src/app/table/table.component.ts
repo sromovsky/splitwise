@@ -8,7 +8,7 @@ import {
     MatHeaderRowDef,
     MatRow, MatRowDef, MatTable
 } from '@angular/material/table';
-import {TableColumn} from './table-column.model';
+import {TableColumn} from './table-column.type';
 import {JsonPipe} from '@angular/common';
 
 @Component({

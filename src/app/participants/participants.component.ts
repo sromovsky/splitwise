@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {ParticipantStore} from './participant.store';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TableComponent} from '../table/table.component';
-import {TableColumn} from '../table/table-column.model';
+import {TableColumn} from '../table/table-column.type';
 import {MatIcon} from '@angular/material/icon';
 import {MatFabButton} from '@angular/material/button';
 
