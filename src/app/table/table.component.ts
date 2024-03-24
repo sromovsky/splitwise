@@ -10,6 +10,8 @@ import {
 } from '@angular/material/table';
 import {TableColumn} from './table-column.type';
 import {JsonPipe} from '@angular/common';
+import {MatCard, MatCardContent} from '@angular/material/card';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-table',
@@ -25,7 +27,10 @@ import {JsonPipe} from '@angular/common';
         MatRowDef,
         MatTable,
         MatHeaderCellDef,
-        JsonPipe
+        JsonPipe,
+        MatCard,
+        MatCardContent,
+        TranslateModule
     ],
     templateUrl: './table.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush

@@ -7,7 +7,11 @@ export const appRoutes: Routes = [
     },
     {
         path: 'participants',
-        loadComponent: () => import(/* webpackChunkName: "participants-component" */ './participants/participants.component').then(c => c.ParticipantsComponent)
+        loadComponent: () => import(/* webpackChunkName: "participants-component" */ './participants/participants.component').then(c => c.ParticipantsComponent),
+    },
+    {
+        path: 'new-participant',
+        loadComponent: () => import('./new-participant/new-participant.component').then(c => c.NewParticipantComponent)
     },
     {
         path: '',

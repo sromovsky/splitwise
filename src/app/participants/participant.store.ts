@@ -1,5 +1,5 @@
 import {Participant} from './participant.type';
-import {signalStore, withState} from '@ngrx/signals';
+import {patchState, signalStore, withMethods, withState} from '@ngrx/signals';
 
 type ParticipantState = {
     participants: Participant[];
@@ -11,5 +11,10 @@ const initialState: ParticipantState = {
 
 export const ParticipantStore = signalStore(
     { providedIn: 'root' },
-    withState(initialState)
+    withState(initialState),
+    withMethods((store) => ({
+        addParticipant(participant: Participant): void {
+            patchState(store, (state) => ({ participants: [...state.participants, participant] }));
+        }
+    }))
 );

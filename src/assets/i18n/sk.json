@@ -3,9 +3,9 @@
         "home": "Splitwise",
         "participants": "Účastníci"
     },
-    "participants": {
-        "no-participants": "Žiaden účastník",
+    "participant": {
         "firstName": "Meno",
         "lastName": "Priezvisko"
-    }
+    },
+    "no-participant": "Žiaden účastník"
 }

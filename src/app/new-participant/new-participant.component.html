@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup">
+    <mat-form-field appearance="outline">
+        <mat-label>{{'participant.firstName' | translate}}</mat-label>
+        <input matInput formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>{{'participant.lastName' | translate}}</mat-label>
+        <input matInput formControlName="lastName">
+    </mat-form-field>
+</form>
+
+<div class="app-container-buttons">
+    <button mat-fab color="basic" [routerLink]="'/participants'">
+        <mat-icon>close</mat-icon>
+    </button>
+    <button mat-fab color="primary" (click)="addParticipant()">
+        <mat-icon>done</mat-icon>
+    </button>
+</div>
