@@ -7,9 +7,6 @@ type MenuState = {
 
 const initialState: MenuState = {
     menuItems: [{
-        code: 'menu-items.home',
-        routerLink: ''
-    },{
         code: 'menu-items.participants',
         routerLink: 'participants'
     }]

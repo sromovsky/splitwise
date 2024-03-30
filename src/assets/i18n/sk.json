@@ -1,11 +1,17 @@
 {
+    "brand": "Splitwise",
     "menu-items": {
-        "home": "Splitwise",
         "participants": "Účastníci"
     },
     "participant": {
         "firstName": "Meno",
         "lastName": "Priezvisko"
     },
-    "no-participant": "Žiaden účastník"
+    "no-participant": "Žiaden účastník",
+    "participants": {
+        "title": "Účastníci"
+    },
+    "new-participant": {
+        "title": "Nový účastník"
+    }
 }

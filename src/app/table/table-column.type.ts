@@ -1,4 +1,4 @@
-export type TableColumn = {
-    identifier: string;
+export type TableColumn<T> = {
+    attribute: keyof T;
     label: string;
 }

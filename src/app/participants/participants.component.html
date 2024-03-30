@@ -1,13 +1,17 @@
+<app-page-title>
+    {{'participants.title' | translate}}
+</app-page-title>
+
 @if (hasParticipants()) {
     <app-table [rows]="participants()" [columns]="columns"></app-table>
 } @else {
-    <mat-card>
-        <mat-card-content>{{'no-participant' | translate}}</mat-card-content>
-    </mat-card>
+    <app-card>
+        {{'no-participant' | translate}}
+    </app-card>
 }
 
-<div class="app-container-buttons">
-    <button mat-fab color="primary" [routerLink]="'/new-participant'">
-        <mat-icon>add</mat-icon>
-    </button>
+<div class="d-flex justify-content-end">
+    <app-button variant="light" [routerLink]="'/new-participant'">
+        <app-icon icon="person-plus"></app-icon>
+    </app-button>
 </div>

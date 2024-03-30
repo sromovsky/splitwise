@@ -4,15 +4,17 @@ import {ParticipantStore} from './participant.store';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TableComponent} from '../table/table.component';
 import {TableColumn} from '../table/table-column.type';
-import {MatIcon} from '@angular/material/icon';
-import {MatFabButton} from '@angular/material/button';
 import {RouterLink} from '@angular/router';
-import {MatCard, MatCardContent} from '@angular/material/card';
+import {Participant} from './participant.type';
+import {PageTitleComponent} from '../page-title/page-title.component';
+import {CardComponent} from '../card/card.component';
+import {ButtonComponent} from '../button/button.component';
+import {IconComponent} from '../icon/icon.component';
 
 @Component({
     selector: 'app-participants',
     standalone: true,
-    imports: [CommonModule, TranslateModule, TableComponent, MatIcon, MatFabButton, RouterLink, MatCard, MatCardContent],
+    imports: [CommonModule, TranslateModule, TableComponent, RouterLink, PageTitleComponent, CardComponent, ButtonComponent, IconComponent],
     templateUrl: './participants.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -26,13 +28,13 @@ export class ParticipantsComponent {
         return !!this.participants().length;
     });
 
-    readonly columns: TableColumn[] = [
+    readonly columns: TableColumn<Participant>[] = [
         {
-            identifier: 'firstName',
+            attribute: 'firstName',
             label: this.translateService.instant('participant.firstName')
         },
         {
-            identifier: 'lastName',
+            attribute: 'lastName',
             label: this.translateService.instant('participant.lastName')
         }
     ];

@@ -1,15 +1,22 @@
-<table mat-table [dataSource]="rows()" class="mat-elevation-z8">
-    @for (column of columns(); track column.identifier) {
-        <ng-container [matColumnDef]="column.identifier">
-            <th mat-header-cell *matHeaderCellDef>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        @for (column of columns(); track column) {
+            <th scope="col">
                 {{column.label}}
             </th>
-            <td mat-cell *matCellDef="let element">
-                {{element[column.identifier]}}
-            </td>
-        </ng-container>
-    }
-
-    <tr mat-header-row *matHeaderRowDef="columnIdentifiers()"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnIdentifiers();"></tr>
+        }
+    </tr>
+    </thead>
+    <tbody>
+        @for (row of rows(); track row) {
+            <tr>
+                @for (column of columns(); track column) {
+                    <td>
+                        {{row[column.attribute]}}
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
 </table>

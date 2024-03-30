@@ -1,25 +1,24 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {MatFormField, MatLabel} from '@angular/material/form-field';
-import {MatInput} from '@angular/material/input';
 import {TranslateModule} from '@ngx-translate/core';
-import {MatFabButton} from '@angular/material/button';
-import {MatIcon} from '@angular/material/icon';
 import {Router, RouterLink} from '@angular/router';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {ParticipantStore} from '../participants/participant.store';
+import {PageTitleComponent} from '../page-title/page-title.component';
+import {CardComponent} from '../card/card.component';
+import {ButtonComponent} from '../button/button.component';
+import {IconComponent} from '../icon/icon.component';
 
 @Component({
     selector: 'app-new-participant',
     standalone: true,
     imports: [
-        MatLabel,
-        MatInput,
-        MatFormField,
         TranslateModule,
-        MatFabButton,
-        MatIcon,
         RouterLink,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        PageTitleComponent,
+        CardComponent,
+        ButtonComponent,
+        IconComponent
     ],
     templateUrl: './new-participant.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush

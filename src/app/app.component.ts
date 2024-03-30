@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {AlertsComponent} from './alerts/alerts.component';
-import {MatGridList} from '@angular/material/grid-list';
 
 @Component({
     selector: 'app-root',
@@ -10,8 +9,7 @@ import {MatGridList} from '@angular/material/grid-list';
     imports: [
         RouterOutlet,
         MenuComponent,
-        AlertsComponent,
-        MatGridList
+        AlertsComponent
     ],
     templateUrl: './app.component.html'
 })
